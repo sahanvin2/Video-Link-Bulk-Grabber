@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Video Link Bulk Grabber</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="shell">
+    <header class="hero">
+      <p class="kicker">Creator Media Automation</p>
+      <h1>Video Link Bulk Grabber</h1>
+      <p class="subtitle">Paste a creator URL from Redgifs, VK, or other supported sites and export all discovered video links in one shot.</p>
+    </header>
+
+    <section class="panel">
+      <div class="grid two">
+        <label>
+          Creator URL
+          <input id="creatorUrl" type="text" placeholder="https://www.redgifs.com/users/autumnrenxo" />
+        </label>
+        <label>
+          Platform
+          <select id="platform">
+            <option value="auto">Auto Detect</option>
+            <option value="redgifs">Redgifs</option>
+            <option value="vk">VK</option>
+            <option value="generic">Other (Generic)</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="grid three">
+        <label>
+          Quality
+          <select id="quality">
+            <option value="best">Best Available</option>
+            <option value="hd">HD</option>
+            <option value="sd">SD</option>
+            <option value="gif">GIF</option>
+            <option value="poster">Poster</option>
+          </select>
+        </label>
+
+        <label>
+          Max Items
+          <input id="maxItems" type="number" min="1" max="50000" value="5000" />
+        </label>
+
+        <div class="actions">
+          <button id="grabBtn" class="btn btn-primary">Grab Links</button>
+          <button id="copyBtn" class="btn" disabled>Copy All</button>
+          <button id="txtBtn" class="btn" disabled>Download TXT</button>
+          <button id="csvBtn" class="btn" disabled>Download CSV</button>
+        </div>
+      </div>
+
+      <div class="status-wrap">
+        <p id="status" class="status">Ready.</p>
+        <p id="meta" class="meta"></p>
+      </div>
+
+      <textarea id="resultBox" readonly placeholder="Links will appear here..."></textarea>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
